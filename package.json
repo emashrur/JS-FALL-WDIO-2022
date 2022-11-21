@@ -2,5 +2,24 @@
   "dependencies": {
     "chai": "^4.3.7",
     "moment": "^2.29.4"
-  }
+  },
+  "name": "js-fall-wdio-2022",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emashrur/JS-FALL-WDIO-2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emashrur/JS-FALL-WDIO-2022/issues"
+  },
+  "homepage": "https://github.com/emashrur/JS-FALL-WDIO-2022#readme"
 }
