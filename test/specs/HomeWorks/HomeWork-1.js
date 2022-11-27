@@ -1,4 +1,5 @@
 const { expect , assert } = require("chai");
+const { it } = require("mocha");
 /**
  * Automate below testcase:
  * 
@@ -42,8 +43,8 @@ describe('HomeWork1 TestCases', () => {
 
         await browser.pause(2000);
 
-        if(femaleRadioIsSelected === false) {
-            femaleRadio.click();
+        if(!femaleRadioIsSelecte) {
+            await femaleRadio.click();
             await browser.pause(2000);
             const femaleRadioIsSelected2 = await femaleRadio.isSelected();
             expect(femaleRadioIsSelected2, 'Female radio is not selected').to.be.true;

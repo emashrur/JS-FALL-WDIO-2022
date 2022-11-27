@@ -129,6 +129,14 @@
  *      -> To check if  partial textValue for element is unique or not in chroPath:
  *          -> //tagName[contains(text(), 'partialTextValue')]
  *          -> await $('tagName*=partialTextValue')
+ * 8.) Using the tagName
+ *      -> To check if a tagName is unique on an HTML DOM in chroPath
+ *          -> //tagName
+ *      -> await $('<tagName>');
+ * 9.) Using className (cannot have spaces)
+ *      -> To find if class's attribute value is unique:
+ *          -> //*[@class='classAttrValue]
+ *      -> await $('.classAttrValue');
  */
 
 /**
@@ -166,6 +174,17 @@
  *  -> To find if webElement is displayed:
  *  -> function : isSelected()
  *      -> if selected, returns true, otherwise false
+ * 
+ * 6.) value
+ *  -> To find the value of an attribute:
+ *  -> function : getAttribute()
+ *      -> input : attribute
+ *      -> returnType : string
+ * 
+ * 7.) textValue
+ *  -> To get a text value of a webElement:
+ *  -> function : getText()
+ *      -> returnType : string
  * 
  */
 
