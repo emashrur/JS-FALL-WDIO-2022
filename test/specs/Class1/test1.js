@@ -33,7 +33,7 @@ describe('SampleTestCases', () => {
 
     });
 
-    it('Launch facebook.com', async () =>{
+    it('Launch facebook.com', async () => {
 
         /**
          * To launch a webpage
@@ -48,11 +48,11 @@ describe('SampleTestCases', () => {
          * input : milliSeconds you want to pause
          */
 
-        await browser.pause(10000);
+        await browser.pause(3000);
 
     });
 
-    it('Verify facebook url', async () =>{
+    it('Verify facebook url', async () => {
         /**
          * Steps to verify Facebook URL :
          * 1.) Launch chrome browser
@@ -77,7 +77,7 @@ describe('SampleTestCases', () => {
 
     });
 
-    it('Verify page title is "Facebook - log in or sign up', async () =>{
+    it('Verify page title is "Facebook - log in or sign up"', async () =>{
         await browser.url('/');
         /**
          * To verify a page title on a webpage(web-browser)
@@ -90,7 +90,7 @@ describe('SampleTestCases', () => {
         expect(currentTitle, 'Current title is not expected title').to.equal(expectedTitle);
     });
 
-    it('Misc functions from browser', async () =>{
+    it('Misc functions from browser', async () => {
         await browser.url('/');
         /**
          * To get the window handle on a webpage(web-browser)
@@ -154,7 +154,7 @@ describe('SampleTestCases', () => {
 
     });
 
-    it('Verify page title is starts with "faCeBoOk" while ignoring cases', async () =>{
+    it('Verify page title is starts with "faCeBoOk" while ignoring cases', async () => {
         await browser.url('/');
         /**
          * To verify a page title starts with a specific string on a webpage(web-browser).

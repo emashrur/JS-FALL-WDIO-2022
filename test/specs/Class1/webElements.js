@@ -43,7 +43,7 @@
  * 
  * NOTE : tagNames CANNOT have spaces
  * 
- * <tag1 attr1="value1" attr2="value2" attr3 attr4="value4" attr5="value five" attr6= value six>
+ * <tag1 attr1="value1" attr2="value2" attr3 attr4="value4" attr5="value five" attr6= value six>My Text Value</tag1>
  * tag -> tag1
  * attributes of tag1 -> attr1, attr2, attr3
  *      NOTE : attributeNames CANNOT have spaces
