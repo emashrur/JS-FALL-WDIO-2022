@@ -1,11 +1,12 @@
 // Due date: Nov 21 (Mon)
 const { expect } = require("chai");
 const { it } = require("mocha");
+const moment = require("moment");
 
 
 
 describe('HomeWork-2', () => {
-    it('Facebook: Verify current date is displayed on Sign-Up form', async () => {
+    it.only('Facebook: Verify current date is displayed on Sign-Up form', async () => {
 
 
 
@@ -23,16 +24,21 @@ describe('HomeWork-2', () => {
 
         await browser.url('/');
         await $('=Create new account').click();
+        const now = moment();
+        const expectedMonth = now.format('MMM');
+        const expectedYear = now.format('YYYY');
+        const expectedDay = now.format('DD');
 
-        await browser.pause(5000);
+
+        await browser.pause(3000);
 
         //  expectedMonth = 'Nov';
         //  expectedDay = '27';
         //  expectedYear = '2022';
 
-        const monthField = await $('//option[text()="Nov"]').isSelected();
-        const dayField = await $('//option[text()="27"]').isSelected();
-        const yearField = await $('//option[text()="2022"]').isSelected();
+        const monthField = await $('//select[@id="month"]//option[@selected]').getText();
+        const dayField = await $('//select[@id="day"]//option[@selected]').getText();
+        const yearField = await $('//select[@id="year"]//option[@selected]').getText();
 
         console.log('\n-------------');
         console.log(monthField);
@@ -40,11 +46,10 @@ describe('HomeWork-2', () => {
         console.log(yearField);
         console.log('-------------\n');
 
-        expect(monthField, 'Expected month is not selected by default').to.be.true;
-        expect(dayField, 'Expected day is not selected by default').to.be.true;
-        expect(yearField, 'Expected year is not selected by default').to.be.true;
-
-        await browser.pause(5000);
+        expect(monthField, 'Expected month is not selected by default').to.equal(expectedMonth);
+        expect(dayField, 'Expected day is not selected by default').to.equal(expectedDay);
+        expect(yearField, 'Expected year is not selected by default').to.equal(expectedYear);
+        await browser.pause(3000);
 
 
 
@@ -123,7 +128,7 @@ describe('HomeWork-2', () => {
     })
 
 
-    it.only('Facebook: Verify user gets error when submits empty login form', async () => {
+    it('Facebook: Verify user gets error when submits empty login form', async () => {
 
 
         /**
@@ -146,9 +151,9 @@ describe('HomeWork-2', () => {
         let lowTemp = await $('//span[@class="low-temp-text"]').getText();
         let highTemp = await $('//span[@class="high-temp-text"]').getText();
 
-        feelsLikeTemp = feelsLikeTemp.substring(0,feelsLikeTemp.length-1);
-        lowTemp = lowTemp.substring(0,feelsLikeTemp.length-1);
-        highTemp = highTemp.substring(0,feelsLikeTemp.length-1);
+        feelsLikeTemp = Number(feelsLikeTemp.split('˚')[0]);
+        lowTemp = Number(lowTemp.split('˚')[0]);
+        highTemp = Number(highTemp.split('˚')[0]);
 
         const res = feelsLikeTemp >= lowTemp && feelsLikeTemp <= highTemp;
 
