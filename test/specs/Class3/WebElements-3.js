@@ -137,6 +137,34 @@
  *      -> To find if class's attribute value is unique:
  *          -> //*[@class='classAttrValue]
  *      -> await $('.classAttrValue');
+ * 10.) xPath Types:
+ *      -> 1.) Absolute xPath
+ *          -> ALWAYS STARTS WITH SINGLE SLASH (/)
+ *          -> TELLS THE ROUTE/NAVIGATION TO REACH A PARTICULAR WEBELEMENT FROM HTML-TAG
+ *          -> NOT RELIABLE USED FOR THEORY ONLY.
+ *          -> Tells you exactly which route to take when finding webElement (not that reliable);
+ *          -> forgotten passWord absXpath
+ *          -> /html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[3]/a[1]
+ *          -> Websites are always changing to enhance user experience, so the abs xPath may not always work.
+ *          -> Abs xPaths are only for theories
+ *          -> if something changes on the website, it may disrupt your navigation flow.
+ * 
+ *      -> 2.) * Relative xPath *
+ *          -> VERY IMPORTANT
+ *          -> always starts with double slash (//) this is how you can distinguish between relative and absolute xPaths
+ *          -> relaible because we can use tagName, attribute or test-value in any combination to create route to reach to a particular webElement
+ *     
+ *  -> DIRECT XPATH
+ *      -> using an attributes value:
+ *          -> //tagName[@attrName="attrValue"];
+ *              -> find the tag (tagName) in dom which has attribute (attr) with the value as "attrValue"
+ *      -> using textValue
+ *              -> //tagName[text()="textValue"];
+ *      -> using partial value of attribute 
+ *              -> //tagName[contains(@attrName, "partal attrValue")]; 
+ *      -> using partial text of attribute 
+ *              -> //tagName[contains(text(), "partialTextValue")];
+ *      -> INDIRECT XPATH
  */
 
 /**

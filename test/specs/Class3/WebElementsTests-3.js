@@ -73,7 +73,57 @@ describe('WebElements Test Cases', () => {
 
     })
 
-    // it('', async () => {})
+    it('using simple-xpath', async () => {
+
+        await browser.url('/');
+
+        const loginEmail = await $('//input[@aria-label="Email or phone number"]');
+        await loginEmail.setValue('emashrur@gmail.com');
+
+        await browser.pause(2000);
+
+
+
+
+    })
+    it.only('Practice xPath', async () => {
+
+        await browser.url('/');
+
+        const newAcc = await $('//a[@data-testid="open-registration-form-button"]');
+        await newAcc.click();
+
+        await browser.pause(2000);
+
+        const firstNameField = await $('//input[contains(@name, "first")]');
+        await firstNameField.setValue('a9023');
+
+        const lastNameField = await $('//input[contains(@name, "last")]');
+        await lastNameField.setValue('388w9f');
+
+        const numberEmailField = await $('//input[@name="reg_email__"]');
+        await numberEmailField.setValue('2839u492');
+
+        const passField = await $('//input[@name="reg_passwd__"]');
+        await passField.setValue('38249249');
+
+        const birthMonth = await $('//select[@id="month"]');
+        await birthMonth.selectByVisibleText('Sep');
+
+        const birthDay = await $('//select[@id="day"]');
+        await birthDay.selectByIndex(27);
+
+        const birthYear = await $('//select[@id="year"]');
+        await birthYear.selectByAttribute('value', '2003');
+
+        const femaleRadioButton = await $('//input[@value="1"]');
+        await femaleRadioButton.click();
+
+        await browser.pause(10000);
+
+
+
+    })
 
 
 
