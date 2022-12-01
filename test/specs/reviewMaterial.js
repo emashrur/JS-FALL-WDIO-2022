@@ -97,13 +97,15 @@
 /**
  * Indirect xPaths (ADVANCED XPATHS):
  * 
+ * NOTE : sibTag is target elementTag you are trying to Isolate.
+ * 
  * 1.) Using parent/grandParent tags to isolate webElement:
  *      -> //pTagName[@pAttr="pAttrValue"]//childTag[@cAttr="cAttrValue"];
  *      -> //pTagName[@pAttr="pAttrValue"]/directChildTag[@dChildAttr="dChildAttrValue"];
  * 
  * 2.) Using xPath-axes:
  *      -> Former sibling //fSibTag[fSibAttr="fSibAttrValue"]/former-sibling::sibTag[sibAttr="sibAttrValue"];
- *      -> Preceding sibling //sibTag[sibAttr="sibAttrValue"]::preceding-sibling/pSibTag[pSibAttr="pSibAttrValue"]
+ *      -> Preceding sibling //pSibTag[pSibAttr="pSibAttrValue"]/preceding-sibling::sibTag[sibAttr="sibAttrValue"]
  * 
  */
 

@@ -2,6 +2,7 @@
 const { expect } = require("chai");
 const { it } = require("mocha");
 const moment = require("moment");
+const Commands = require("../POM/Commands");
 
 
 
@@ -128,7 +129,7 @@ describe('HomeWork-2', () => {
     })
 
 
-    it('Facebook: Verify user gets error when submits empty login form', async () => {
+    it('Darksky: Verify feelsLikeTempValue is in between lowTempValue and highTempValue', async () => {
 
 
         /**
