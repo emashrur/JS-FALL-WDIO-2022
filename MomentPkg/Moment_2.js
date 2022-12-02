@@ -151,3 +151,4 @@ console.log(`present.isSame(present4) -> ${isPresentSamePresent4}\n`);
 
 const isP1BetweenP2P3 = present.isBetween(present2,present3);
 console.log(`\n\npresent.isBetween(present2,present3) -> ${isP1BetweenP2P3}\n`);
+console.log(now.month());

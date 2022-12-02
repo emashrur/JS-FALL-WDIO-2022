@@ -1,0 +1,1 @@
+const LoginPage = require('../POM/FaceBook/LoginPage');
