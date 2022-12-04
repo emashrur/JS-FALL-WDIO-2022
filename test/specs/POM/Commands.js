@@ -6,6 +6,10 @@ class Commands {
         return await $(locator);
     }
 
+    async findWebElements (locator) {
+        return await $$(locator);
+    }
+
     async typeInField(locator, value) {
         await $(locator).setValue(value);
     }
