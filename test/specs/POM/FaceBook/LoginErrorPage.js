@@ -18,6 +18,9 @@ class LoginErrorPage {
         return this.commands.getElementText(this.errorMessage);
     }
 
+    async isLoginErrorDisplayed () {
+        await this.commands.isElementedDisplayed(this.errorMessage);
+    }
 
 
 

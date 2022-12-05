@@ -55,6 +55,14 @@ class Commands {
         return await $(locator).isDisplayed();
     }
 
+    async hoverMouse (locator) {
+        await $(locator).moveTo()
+    }
+
+    async wTitle () {
+        await browser.getTitle();
+    }
+
 
 }
 

@@ -8,6 +8,7 @@ const CreateNewAccPage = require('../POM/FaceBook/CreateNewAccPage');
 const MessengerLoginErrorPage = require("../POM/Messenger/MessengerLoginErrorPage");
 const DarkSkyHome = require('../POM/DarkSky/DarkSkyHome');
 const Commands = require('../POM/Commands');
+const MetaPayHome = require('../POM/MetaPay/metaPayHome');
 
 describe('HomeWork-4 TestCases', () => {
 
@@ -49,6 +50,7 @@ describe('HomeWork-4 TestCases', () => {
 
         const commands = new Commands();
         const loginPage = new LoginPage();
+        const metaPay = new MetaPayHome();
 
         await browser.url('https://www.facebook.com');
 
@@ -59,17 +61,26 @@ describe('HomeWork-4 TestCases', () => {
         await loginPage.openMetaPay();
         await loginPage.openMessenger();
         
-
+        await browser.pause(2000);
+        
 
         const allHandles = await commands.getHandles();
-        for (handle of allHandles) {
+        for (let handle of allHandles) {
             await commands.switchWindow(handle);
             const expectedTitle = await browser.getTitle();
             if (!expectedTitle.startsWith('Meta Pay')) {
                 await commands.closeTab();
-            } 
+            }
         }
+        
+        const remainingHandles = await commands.getHandles();
+        await commands.switchWindow(remainingHandles[0]);
+
         await browser.pause(2000);
+
+        await metaPay.hoverMetaPay();
+
+        await browser.pause(5000);
 
     })
 
